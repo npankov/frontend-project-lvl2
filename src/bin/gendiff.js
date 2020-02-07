@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import genDiff from '..';
 
 const program = require('commander');
  
@@ -8,8 +9,7 @@ program
   .option('-f, --format [type]  Output format')
   .arguments('<firstConfig> <secondConfig>')
   .action(function (firstConfig, secondConfig) {
-    firstConfigValue = firstConfig;
-    secondConfigValue = secondConfig;
-  })
+    console.log(genDiff(firstConfig, secondConfig));
+  });
 
 program.parse(process.argv);
