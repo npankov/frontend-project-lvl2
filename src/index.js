@@ -6,26 +6,27 @@ const genDiff = (fileFirst, fileSecond) => {
   const objSecond = JSON.parse(fs.readFileSync(fileSecond));
   const result = [];
 
-  for (const key in objFirst) {
-    if (_.has(objSecond, key)) {
-      if (objSecond[key] === objFirst[key]) {
-        result.push(`${key} : ${objFirst[key]}`);
-      } 
-      else {
-        result.push(`+ ${key} : ${objSecond[key]}`);
-        result.push(`- ${key} : ${objFirst[key]}`);
-      }
-    } 
-    else {
-      result.push(`- ${key} : ${objFirst[key]}`);
-    }
-  }
+  const keysValuesObjFirst = Object.entries(objFirst);
+  const keysValuesObjSecond = Object.entries(objSecond);
 
-  for (const key in objSecond) {
-    if (!_.has(objFirst, key)) {
-      result.push(`+ ${key} : ${objSecond[key]}`);
+  const mappedFirst = keysValuesObjFirst.map(([key, value]) => {
+    if (_.has(objSecond, key)) {
+      if (objSecond[key] === value) {
+        result.push(`${key} : ${value}`);
+      } else {
+        result.push(`+ ${key} : ${objSecond[key]}`);
+        result.push(`- ${key} : ${value}`);
+      }
+    } else {
+      result.push(`- ${key} : ${value}`);
     }
-  }
+  });
+
+  const mappedSecond = keysValuesObjSecond.map(([key, value]) => {
+    if (!_.has(objFirst, key)) {
+      result.push(`+ ${key} : ${value}`);
+    }
+  });
 
   const resultString = `{\n${result.join('\n')}\n}`;
   return resultString;
