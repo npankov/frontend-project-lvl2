@@ -1,5 +1,5 @@
-# Frontend project level 2. 
-# It's the console utility for comparing two .json files.
+# Frontend project level 2
+# It's the console utility for comparing two .json files
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/07161708789607c39140/maintainability)](https://codeclimate.com/github/npankov/frontend-project-lvl2/maintainability)
 
