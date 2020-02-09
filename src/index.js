@@ -4,31 +4,31 @@ import _ from 'lodash';
 const genDiff = (fileFirst, fileSecond) => {
   const objFirst = JSON.parse(fs.readFileSync(fileFirst));
   const objSecond = JSON.parse(fs.readFileSync(fileSecond));
-  const result = [];
-
   const keysValuesObjFirst = Object.entries(objFirst);
   const keysValuesObjSecond = Object.entries(objSecond);
 
-  const mappedFirst = keysValuesObjFirst.map(([key, value]) => {
+  const reducedFirst = keysValuesObjFirst.reduce((acc, [key, value]) => {
     if (_.has(objSecond, key)) {
       if (objSecond[key] === value) {
-        result.push(`${key} : ${value}`);
+        acc.push(`${key} : ${value}`);
       } else {
-        result.push(`+ ${key} : ${objSecond[key]}`);
-        result.push(`- ${key} : ${value}`);
+        acc.push(`+ ${key} : ${objSecond[key]}`);
+        acc.push(`- ${key} : ${value}`);
       }
     } else {
-      result.push(`- ${key} : ${value}`);
+      acc.push(`- ${key} : ${value}`);
     }
-  });
+    return acc;
+  }, []);
 
-  const mappedSecond = keysValuesObjSecond.map(([key, value]) => {
+  const reducedSecond = keysValuesObjSecond.reduce((acc, [key, value]) => {
     if (!_.has(objFirst, key)) {
-      result.push(`+ ${key} : ${value}`);
+      acc.push(`+ ${key} : ${value}`);
     }
-  });
+    return acc;
+  }, []);
 
-  const resultString = `{\n${result.join('\n')}\n}`;
+  const resultString = `{\n${reducedFirst.join('\n')}\n${reducedSecond.join('\n')}\n}`;
   return resultString;
 };
 
