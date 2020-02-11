@@ -7,6 +7,9 @@ start:
 publish:
 	npm publish --dry-run
 
+build:
+	npm run build
+
 test:
 	npm test
 
