@@ -13,7 +13,9 @@
 ---
 
 ### Using
-To start you type in the terminal (without quotes)
+To start you type in the terminal  
+'firstfile.json' and 'secondfile.json' - it's the path from file, with your name (without quotes)
+
 
     gendiff 'firstfile.json' 'secondfile.json'
 
