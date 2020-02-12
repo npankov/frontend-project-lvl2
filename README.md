@@ -1,5 +1,5 @@
 # Frontend project level 2
-# It's the console utility for comparing .json, .yml files
+# It's the console utility for comparing .json, .yml, .ini files
 
 ![Comparing Files](https://github.com/npankov/frontend-project-lvl2/workflows/Comparing%20Files/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/07161708789607c39140/maintainability)](https://codeclimate.com/github/npankov/frontend-project-lvl2/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/07161708789607c39140/test_coverage)](https://codeclimate.com/github/npankov/frontend-project-lvl2/test_coverage)
 
