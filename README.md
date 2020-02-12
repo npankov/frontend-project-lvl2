@@ -25,9 +25,19 @@ To start you type in the terminal
 ### Using (comparing .yml files)
 To start you type in the terminal  
 
-    gendiff 'firstfile.json' 'secondfile.json'
+    gendiff 'firstfile.yml' 'secondfile.yml'
 'firstfile.yml' and 'secondfile.yml' - it's the path to the file, with its name (without quotes)
  
 [![asciicast](https://asciinema.org/a/ISvHredlmNlyebPCiUs2EFuw3.svg)](https://asciinema.org/a/ISvHredlmNlyebPCiUs2EFuw3)
+
+---
+
+### Using (comparing .ini files)
+To start you type in the terminal  
+
+    gendiff 'firstfile.ini' 'secondfile.ini'
+'firstfile.ini' and 'secondfile.ini' - it's the path to the file, with its name (without quotes)
+ 
+[![asciicast](https://asciinema.org/a/maxFrSCQSnYlTqRx37ZdweCFr.svg)](https://asciinema.org/a/maxFrSCQSnYlTqRx37ZdweCFr)
 
 ---
