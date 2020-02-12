@@ -12,3 +12,10 @@ test('test JSON compare', () => {
   const result = readFile('result');
   expect(genDiff(before, after)).toBe(result);
 });
+
+test('test YAML compare', () => {
+  const before = getFixturePath('before.yml');
+  const after = getFixturePath('after.yml');
+  const result = readFile('result');
+  expect(genDiff(before, after)).toBe(result);
+});
