@@ -6,7 +6,7 @@ import genDiff from '..';
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-describe('.json', () => {
+describe('Comparing files tests', () => {
   it('.json test', () => {
     const before = getFixturePath('before.json');
     const after = getFixturePath('after.json');
