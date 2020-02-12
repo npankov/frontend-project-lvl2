@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx babel-node src/bin/gendiff.js /home/panek/before.json /home/panek/after.json
+	npx babel-node src/bin/gendiff.js /home/panek/before.ini /home/panek/after.ini
 
 publish:
 	npm publish --dry-run
