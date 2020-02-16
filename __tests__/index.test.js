@@ -9,11 +9,12 @@ const cases = [
   [getFixturePath('before.json'), getFixturePath('after.json'), readFile('result')],
   [getFixturePath('before.yml'), getFixturePath('after.yml'), readFile('result')],
   [getFixturePath('before.ini'), getFixturePath('after.ini'), readFile('result')],
+  [getFixturePath('beforeNested.json'), getFixturePath('afterNested.json'), readFile('resultNested')],
 ];
 
 describe('Comparing files tests', () => {
   test.each(cases)(
-    'test %s',
+    ('test %s'),
     (before, after, result) => {
       expect(genDiff(before, after)).toBe(result);
     },
