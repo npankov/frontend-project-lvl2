@@ -1,36 +1,49 @@
 import _ from 'lodash';
+import buildAst from '..';
 import parser from './parsers';
 
 const genDiff = (fileFirst, fileSecond) => {
   const objFirst = parser(fileFirst);
   const objSecond = parser(fileSecond);
+  const data = buildAst(objFirst, objSecond);
 
-  const keysValuesObjFirst = Object.entries(objFirst);
-  const keysValuesObjSecond = Object.entries(objSecond);
+  const renderObj = (obj) => `{${_.keys(obj).map((key) => `\n       ${key}: ${obj[key]}`).join('')}\n   }`;
 
-  const reducedFirst = keysValuesObjFirst.reduce((acc, [key, value]) => {
-    if (_.has(objSecond, key)) {
-      if (objSecond[key] === value) {
-        acc.push(`${key} : ${value}`);
-      } else {
-        acc.push(`+ ${key} : ${objSecond[key]}`);
-        acc.push(`- ${key} : ${value}`);
+  const renderValue = (value) => (_.isObject(value) ? renderObj(value) : value);
+
+  const iter = (data) => {
+    const result = data.reduce((acc, el) => {
+      const {
+        type, key, value, valueAfter, children,
+      } = el;
+
+      if (type === 'removed') {
+        acc.push(` - ${key}: ${renderValue(value)}\n`);
       }
-    } else {
-      acc.push(`- ${key} : ${value}`);
-    }
-    return acc;
-  }, []);
 
-  const reducedSecond = keysValuesObjSecond.reduce((acc, [key, value]) => {
-    if (!_.has(objFirst, key)) {
-      acc.push(`+ ${key} : ${value}`);
-    }
-    return acc;
-  }, []);
+      if (type === 'added') {
+        acc.push(` + ${key}: ${renderValue(value)}\n`);
+      }
 
-  const resultString = `{\n${reducedFirst.join('\n')}\n${reducedSecond.join('\n')}\n}`;
-  return resultString;
+      if (type === 'nested') {
+        acc.push(`${key}: {\n${iter(children)}}\n`);
+      }
+      if (type === 'equal') {
+        acc.push(`   ${key}: ${renderValue(value)}\n`);
+      }
+
+      if (type === 'modified') {
+        acc.push(` + ${key}: ${renderValue(valueAfter)}\n`);
+        acc.push(` - ${key}: ${renderValue(value)}\n`);
+      }
+
+      return acc;
+    }, []);
+
+    return result.join('');
+  };
+
+  return iter(data);
 };
 
 export default genDiff;
