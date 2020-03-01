@@ -12,7 +12,9 @@ const genDiff = (fileFirst, fileSecond) => {
     return `{${keys.map((key) => `\n${offset}${space}${space}${key}: ${obj[key]}`)}\n${offset}}`;
   };
 
-  const renderValue = (value, offset, space) => (_.isObject(value) ? renderObj(value, (offset + space + space), space) : value);
+  const renderValue = (value, offset, space) => {
+    return _.isObject(value) ? renderObj(value, (offset + space + space), space) : value;
+  };
 
   const spaceCount = 2;
 
