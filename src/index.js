@@ -12,15 +12,15 @@ const genDiff = (fileFirst, fileSecond) => {
     return `{${keys.map((key) => `\n${offset}${space}${space}${key}: ${obj[key]}`)}\n${offset}}`;
   };
 
-  const renderValue = (value, offset, space) => {
-    return _.isObject(value) ? renderObj(value, (offset + space + space), space) : value;
-  };
+  const renderValue = (value, offset, space) => (_.isObject(value) ? renderObj(value, (offset + space + space), space) : value);
 
   const spaceCount = 2;
 
   const iter = (data, offset = '', space = ' '.repeat(spaceCount)) => {
     const result = data.reduce((acc, el) => {
-      const { type, key, value, valueAfter, children } = el;
+      const {
+        type, key, value, valueAfter, children,
+      } = el;
 
       if (type === 'added') {
         acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
@@ -39,7 +39,7 @@ const genDiff = (fileFirst, fileSecond) => {
       }
 
       if (type === 'modified') {
-        acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(valueAfter, offset, space)}\n`)
+        acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(valueAfter, offset, space)}\n`);
         acc.push(`${offset}${space}-${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
       }
 
