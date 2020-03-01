@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import buildAst from '..';
+import buildAst from './buildAst';
 import parser from './parsers';
 
 const genDiff = (fileFirst, fileSecond) => {
@@ -7,34 +7,40 @@ const genDiff = (fileFirst, fileSecond) => {
   const objSecond = parser(fileSecond);
   const data = buildAst(objFirst, objSecond);
 
-  const renderObj = (obj) => `{${_.keys(obj).map((key) => `\n       ${key}: ${obj[key]}`).join('')}\n   }`;
+  const renderObj = (obj, offset, space) => {
+    const keys = _.keys(obj);
+    return `{${keys.map((key) => `\n${offset}${space}${space}${key}: ${obj[key]}`)}\n${offset}}`;
+  };
 
-  const renderValue = (value) => (_.isObject(value) ? renderObj(value) : value);
+  const renderValue = (value, offset, space) => {
+    return _.isObject(value) ? renderObj(value, (offset + space + space), space) : value;
+  };
 
-  const iter = (data) => {
+  const spaceCount = 2;
+
+  const iter = (data, offset = '', space = ' '.repeat(spaceCount)) => {
     const result = data.reduce((acc, el) => {
-      const {
-        type, key, value, valueAfter, children,
-      } = el;
-
-      if (type === 'removed') {
-        acc.push(` - ${key}: ${renderValue(value)}\n`);
-      }
+      const { type, key, value, valueAfter, children } = el;
 
       if (type === 'added') {
-        acc.push(` + ${key}: ${renderValue(value)}\n`);
+        acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
+        // acc.push(`     + ${renderKeyValue(key, value)}\n`);
+      }
+
+      if (type === 'removed') {
+        acc.push(`${offset}${space}-${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
       }
 
       if (type === 'nested') {
-        acc.push(`${key}: {\n${iter(children)}}\n`);
+        acc.push(`${offset}${space}${space}${key}: {\n${iter(children, (offset + space + space), space)}${offset}${space}${space}}\n`);
       }
       if (type === 'equal') {
-        acc.push(`   ${key}: ${renderValue(value)}\n`);
+        acc.push(`${offset}${space}${space}${key}: ${renderValue(value, offset, space)}\n`);
       }
 
       if (type === 'modified') {
-        acc.push(` + ${key}: ${renderValue(valueAfter)}\n`);
-        acc.push(` - ${key}: ${renderValue(value)}\n`);
+        acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(valueAfter, offset, space)}\n`)
+        acc.push(`${offset}${space}-${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
       }
 
       return acc;
@@ -43,7 +49,7 @@ const genDiff = (fileFirst, fileSecond) => {
     return result.join('');
   };
 
-  return iter(data);
+  return `{\n${iter(data)}}`;
 };
 
 export default genDiff;
