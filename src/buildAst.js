@@ -3,7 +3,7 @@ import _ from 'lodash';
 const buildAst = (fileFirst, fileSecond) => {
   const objFirst = fileFirst;
   const objSecond = fileSecond;
-  const keys = _.union(_.keys(objFirst), _.keys(objSecond)).sort();
+  const keys = _.union(_.keys(objFirst), _.keys(objSecond));
 
   return keys.map((key) => {
     if (_.isObject(objFirst[key]) && _.isObject(objSecond[key])) {

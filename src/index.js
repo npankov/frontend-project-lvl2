@@ -26,7 +26,6 @@ const genDiff = (fileFirst, fileSecond) => {
 
       if (type === 'added') {
         acc.push(`${offset}${space}+${space.slice(1)}${key}: ${renderValue(value, offset, space)}\n`);
-        // acc.push(`     + ${renderKeyValue(key, value)}\n`);
       }
 
       if (type === 'removed') {
