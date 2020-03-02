@@ -18,7 +18,7 @@ To start you type in the terminal
     gendiff 'firstfile.json' 'secondfile.json'
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
-[![asciicast](https://asciinema.org/a/oiEmDtLvVPqR6ktDh0cITuV5K.svg)](https://asciinema.org/a/oiEmDtLvVPqR6ktDh0cITuV5K)
+[![asciicast](https://asciinema.org/a/kziyMo0ZKfdXh8SaoE37s8Q3j.svg)](https://asciinema.org/a/kziyMo0ZKfdXh8SaoE37s8Q3j)
 
 ---
 
@@ -28,7 +28,7 @@ To start you type in the terminal
     gendiff 'firstfile.yml' 'secondfile.yml'
 'firstfile.yml' and 'secondfile.yml' - it's the path to the file, with its name (without quotes)
  
-[![asciicast](https://asciinema.org/a/ISvHredlmNlyebPCiUs2EFuw3.svg)](https://asciinema.org/a/ISvHredlmNlyebPCiUs2EFuw3)
+[![asciicast](https://asciinema.org/a/xu5Bxv3fOcMe21xiGXsFoBohU.svg)](https://asciinema.org/a/xu5Bxv3fOcMe21xiGXsFoBohU)
 
 ---
 
@@ -38,6 +38,6 @@ To start you type in the terminal
     gendiff 'firstfile.ini' 'secondfile.ini'
 'firstfile.ini' and 'secondfile.ini' - it's the path to the file, with its name (without quotes)
  
-[![asciicast](https://asciinema.org/a/maxFrSCQSnYlTqRx37ZdweCFr.svg)](https://asciinema.org/a/maxFrSCQSnYlTqRx37ZdweCFr)
+[![asciicast](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu.svg)](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu)
 
 ---

@@ -10,6 +10,8 @@ const cases = [
   [getFixturePath('before.yml'), getFixturePath('after.yml'), readFile('result')],
   [getFixturePath('before.ini'), getFixturePath('after.ini'), readFile('result')],
   [getFixturePath('beforeNested.json'), getFixturePath('afterNested.json'), readFile('resultNested')],
+  [getFixturePath('beforeNested.yml'), getFixturePath('afterNested.yml'), readFile('resultNested')],
+  [getFixturePath('beforeNested.ini'), getFixturePath('afterNested.ini'), readFile('resultNested')],
 ];
 
 describe('Comparing files tests', () => {
