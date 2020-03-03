@@ -15,8 +15,8 @@
 ### Using (comparing .json files)
 To start you type in the terminal  
 
-    gendiff --format plain/nested 'firstfile.json' 'secondfile.json'
-for compare files you should choose format plain or nested  
+    gendiff --format plain/nested/json 'firstfile.json' 'secondfile.json'
+for compare files you should choose format plain, nested or json 
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
 [![asciicast](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH.svg)](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH)
@@ -26,17 +26,18 @@ for compare files you should choose format plain or nested
 ### Using (comparing .yml files)
 To start you type in the terminal  
 
-    gendiff 'firstfile.yml' 'secondfile.yml'
+    gendiff --format plain/nested/json 'firstfile.yml' 'secondfile.yml'
+for compare files you should choose format plain, nested or json  
 'firstfile.yml' and 'secondfile.yml' - it's the path to the file, with its name (without quotes)
  
-[![asciicast](https://asciinema.org/a/xu5Bxv3fOcMe21xiGXsFoBohU.svg)](https://asciinema.org/a/xu5Bxv3fOcMe21xiGXsFoBohU)
-
+[![asciicast](https://asciinema.org/a/CgeUlr00hnHeALPWEUM6DzcFg.svg)](https://asciinema.org/a/CgeUlr00hnHeALPWEUM6DzcFg)
 ---
 
 ### Using (comparing .ini files)
 To start you type in the terminal  
 
-    gendiff 'firstfile.ini' 'secondfile.ini'
+    gendiff --format plain/nested/json 'firstfile.ini' 'secondfile.ini'
+for compare files you should choose format plain, nested or json  
 'firstfile.ini' and 'secondfile.ini' - it's the path to the file, with its name (without quotes)
  
 [![asciicast](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu.svg)](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu)

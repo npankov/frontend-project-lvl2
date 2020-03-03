@@ -1,5 +1,6 @@
 import plainRender from './plainRender';
 import nestedRender from './nestedRender';
+import jsonRender from './jsonRender';
 
 const renders = (data, format) => {
   let render;
@@ -9,6 +10,9 @@ const renders = (data, format) => {
   }
   if (format === 'nested') {
     render = nestedRender(data);
+  }
+  if (format === 'json') {
+    render = jsonRender(data);
   }
 
   return render;
