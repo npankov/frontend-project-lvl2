@@ -15,10 +15,11 @@
 ### Using (comparing .json files)
 To start you type in the terminal  
 
-    gendiff 'firstfile.json' 'secondfile.json'
+    gendiff --format plain/nested 'firstfile.json' 'secondfile.json'
+for compare files you should choose format plain or nested
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
-[![asciicast](https://asciinema.org/a/kziyMo0ZKfdXh8SaoE37s8Q3j.svg)](https://asciinema.org/a/kziyMo0ZKfdXh8SaoE37s8Q3j)
+[![asciicast](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH.svg)](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH)
 
 ---
 
