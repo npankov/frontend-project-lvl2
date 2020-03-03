@@ -3,6 +3,7 @@ import _ from 'lodash';
 const plainRender = (data) => {
   const renderValue = (value) => (_.isObject(value) ? '[complex value]' : value);
 
+
   const iter = (elements, parent = '') => {
     const result = elements.reduce((acc, el) => {
       const {

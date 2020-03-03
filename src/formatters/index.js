@@ -5,12 +5,13 @@ const renders = (data, format) => {
   let render;
 
   if (format === 'plain') {
-    render = plainRender;
-  } else if (format === 'nested') {
-    render = nestedRender;
+    render = plainRender(data);
+  }
+  if (format === 'nested') {
+    render = nestedRender(data);
   }
 
-  return render(data);
+  return render;
 };
 
 export default renders;

@@ -10,4 +10,5 @@ const genDiff = (fileFirst, fileSecond, format) => {
   return render;
 };
 
+
 export default genDiff;
