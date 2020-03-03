@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
-const buildAst = (fileFirst, fileSecond) => {
-  const objFirst = fileFirst;
-  const objSecond = fileSecond;
+const buildAst = (objFirst, objSecond) => {
   const keys = _.union(_.keys(objFirst), _.keys(objSecond));
 
   return keys.map((key) => {
