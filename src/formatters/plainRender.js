@@ -26,13 +26,17 @@ const plainRender = (data) => {
         acc.push(`Property '${parent}${key}' was modified from '${renderValue(value)}' to '${renderValue(valueAfter)}'\n`);
       }
 
+      if (type === 'equal') {
+        acc.push(`Property '${parent}${key}' not changed\n`);
+      }
+
       return acc;
     }, []);
 
     return result.join('');
   };
 
-  return iter(data);
+  return iter(data).trim();
 };
 
 export default plainRender;
