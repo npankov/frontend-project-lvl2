@@ -16,7 +16,7 @@
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.json' 'secondfile.json'
-for compare files you should choose format plain, nested or json 
+for compare files you should choose format plain, nested or json  
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
 [![asciicast](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl.svg)](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl)
