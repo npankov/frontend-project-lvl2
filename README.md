@@ -19,7 +19,7 @@ To start you type in the terminal
 for compare files you should choose format plain, nested or json 
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
-[![asciicast](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH.svg)](https://asciinema.org/a/BWC9qyTxVPcXysdim8ZSnJjTH)
+[![asciicast](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl.svg)](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl)
 
 ---
 
@@ -30,7 +30,8 @@ To start you type in the terminal
 for compare files you should choose format plain, nested or json  
 'firstfile.yml' and 'secondfile.yml' - it's the path to the file, with its name (without quotes)
  
-[![asciicast](https://asciinema.org/a/CgeUlr00hnHeALPWEUM6DzcFg.svg)](https://asciinema.org/a/CgeUlr00hnHeALPWEUM6DzcFg)
+[![asciicast](https://asciinema.org/a/3wCHryYbB1aZ81o4YzV6zFI8P.svg)](https://asciinema.org/a/3wCHryYbB1aZ81o4YzV6zFI8P)
+
 ---
 
 ### Using (comparing .ini files)
@@ -40,6 +41,6 @@ To start you type in the terminal
 for compare files you should choose format plain, nested or json  
 'firstfile.ini' and 'secondfile.ini' - it's the path to the file, with its name (without quotes)
  
-[![asciicast](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu.svg)](https://asciinema.org/a/uPjVnJnC0KYQXoV5UWmrKyNfu)
+[![asciicast](https://asciinema.org/a/V1ytihZh1FU5lqnlFxsiyy2yq.svg)](https://asciinema.org/a/V1ytihZh1FU5lqnlFxsiyy2yq)
 
 ---
