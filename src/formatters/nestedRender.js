@@ -13,10 +13,6 @@ const nestedRender = (data) => {
     return value;
   };
 
-  const renderKeyValue = (key, value, offset, tab) => `${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}`;
-
-  const renderOffset = (offset, tab) => `${offset}${tab}`;
-
   const spaceCount = 2;
 
   const iter = (elements, offset = '', tab = ' '.repeat(spaceCount)) => {
@@ -26,11 +22,11 @@ const nestedRender = (data) => {
       } = el;
 
       if (type === 'added') {
-        acc.push(`${renderOffset(offset, tab)}+${renderKeyValue(key, value, offset, tab)}\n`);
+        acc.push(`${offset}${tab}+${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}\n`);
       }
 
       if (type === 'removed') {
-        acc.push(`${renderOffset(offset, tab)}-${renderKeyValue(key, value, offset, tab)}\n`);
+        acc.push(`${offset}${tab}-${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}\n`);
       }
 
       if (type === 'nested') {
