@@ -7,16 +7,16 @@ const parser = (pathTofile) => {
   const format = path.extname(pathTofile);
   const data = fs.readFileSync(pathTofile, 'utf-8');
 
-  let parse;
   if (format === '.json') {
-    parse = JSON.parse;
-  } else if (format === '.yml') {
-    parse = yaml.safeLoad;
-  } else if (format === '.ini') {
-    parse = ini.parse;
+    return JSON.parse(data);
   }
-
-  return parse(data);
+  if (format === '.yml') {
+    return yaml.safeLoad(data);
+  }
+  if (format === '.ini') {
+    return ini.parse(data);
+  }
+  throw new Error('wrond format file! you need to choose .json/.yml/.ini');
 };
 
 export default parser;

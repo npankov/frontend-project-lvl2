@@ -3,19 +3,16 @@ import nestedRender from './nestedRender';
 import jsonRender from './jsonRender';
 
 const renders = (data, format) => {
-  let render;
-
   if (format === 'plain') {
-    render = plainRender(data);
+    return plainRender(data);
   }
   if (format === 'nested') {
-    render = nestedRender(data);
+    return nestedRender(data);
   }
   if (format === 'json') {
-    render = jsonRender(data);
+    return jsonRender(data);
   }
-
-  return render;
+  throw new Error('wrond format output! you need to choose nested/plain/json');
 };
 
 export default renders;
