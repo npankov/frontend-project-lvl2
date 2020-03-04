@@ -16,7 +16,7 @@
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.json' 'secondfile.json'
-for compare files you should choose format plain, nested or json  
+To compare files you should choose output format plain, nested or json  
 'firstfile.json' and 'secondfile.json' - it's the path to the file, with its name (without quotes)
 
 [![asciicast](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl.svg)](https://asciinema.org/a/lKvEtEoBRy13a954ORCdy75rl)
@@ -27,7 +27,7 @@ for compare files you should choose format plain, nested or json
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.yml' 'secondfile.yml'
-for compare files you should choose format plain, nested or json  
+To compare files you should choose output format plain, nested or json  
 'firstfile.yml' and 'secondfile.yml' - it's the path to the file, with its name (without quotes)
  
 [![asciicast](https://asciinema.org/a/3wCHryYbB1aZ81o4YzV6zFI8P.svg)](https://asciinema.org/a/3wCHryYbB1aZ81o4YzV6zFI8P)
@@ -38,7 +38,7 @@ for compare files you should choose format plain, nested or json
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.ini' 'secondfile.ini'
-for compare files you should choose format plain, nested or json  
+To compare files you should choose output format plain, nested or json  
 'firstfile.ini' and 'secondfile.ini' - it's the path to the file, with its name (without quotes)
  
 [![asciicast](https://asciinema.org/a/V1ytihZh1FU5lqnlFxsiyy2yq.svg)](https://asciinema.org/a/V1ytihZh1FU5lqnlFxsiyy2yq)
