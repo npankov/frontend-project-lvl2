@@ -26,12 +26,10 @@ const nestedRender = (data) => {
       } = el;
 
       if (type === 'added') {
-        // acc.push(`${offset}${tab}+${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}\n`);
         acc.push(`${renderOffset(offset, tab)}+${renderKeyValue(key, value, offset, tab)}\n`);
       }
 
       if (type === 'removed') {
-        // acc.push(`${offset}${tab}-${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}\n`);
         acc.push(`${renderOffset(offset, tab)}-${renderKeyValue(key, value, offset, tab)}\n`);
       }
 
