@@ -6,8 +6,12 @@ const nestedRender = (data) => {
     return `{${keys.map((key) => `\n${offset}${tab}${tab}${key}: ${obj[key]}`)}\n${offset}}`;
   };
 
-  // eslint-disable-next-line max-len
-  const renderValue = (value, offset, tab) => (_.isObject(value) ? renderObj(value, (offset + tab + tab), tab) : value);
+  const renderValue = (value, offset, tab) => {
+    if (_.isObject(value)) {
+      return renderObj(value, (offset + tab + tab), tab);
+    }
+    return value;
+  };
 
   const spaceCount = 2;
 
