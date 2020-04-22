@@ -6,7 +6,7 @@ const plainRender = (data) => {
   const iter = (elements, parent = '') => {
     const result = elements.reduce((acc, el) => {
       const {
-        type, key, value, valueAfter, children,
+        type, key, value, valueBefore, valueAfter, children,
       } = el;
 
       if (type === 'nested') {
@@ -23,7 +23,7 @@ const plainRender = (data) => {
       }
 
       if (type === 'modified') {
-        acc.push(`Property '${parent}${key}' was modified from '${renderValue(value)}' to '${renderValue(valueAfter)}'\n`);
+        acc.push(`Property '${parent}${key}' was modified from '${renderValue(valueBefore)}' to '${renderValue(valueAfter)}'\n`);
       }
 
       if (type === 'equal') {

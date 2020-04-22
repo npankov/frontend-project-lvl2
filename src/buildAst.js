@@ -18,7 +18,7 @@ const buildAst = (objFirst, objSecond) => {
 
     if (objFirst[key] !== objSecond[key]) {
       return {
-        type: 'modified', key, value: objFirst[key], valueAfter: objSecond[key],
+        type: 'modified', key, valueBefore: objFirst[key], valueAfter: objSecond[key],
       };
     }
     return { type: 'equal', key, value: objFirst[key] };

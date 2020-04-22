@@ -1,14 +1,13 @@
 import buildAst from './buildAst';
-import parser from './parsers';
-import renders from './formatters/index';
+import parse from './parsers';
+import render from './formatters';
 
-const genDiff = (fileFirst, fileSecond, format) => {
-  const objFirst = parser(fileFirst);
-  const objSecond = parser(fileSecond);
+const genDiff = (pathToFileFirst, pathToFileSecond, format) => {
+  const objFirst = parse(pathToFileFirst);
+  const objSecond = parse(pathToFileSecond);
   const data = buildAst(objFirst, objSecond);
-  const render = renders(data, format);
-  return render;
+  const rendering = render(data, format);
+  return rendering;
 };
-
 
 export default genDiff;

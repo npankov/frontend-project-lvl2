@@ -18,7 +18,7 @@ const nestedRender = (data) => {
   const iter = (elements, offset = '', tab = ' '.repeat(spaceCount)) => {
     const result = elements.reduce((acc, el) => {
       const {
-        type, key, value, valueAfter, children,
+        type, key, value, valueBefore, valueAfter, children,
       } = el;
 
       if (type === 'added') {
@@ -38,7 +38,7 @@ const nestedRender = (data) => {
 
       if (type === 'modified') {
         acc.push(`${offset}${tab}+${tab.slice(1)}${key}: ${renderValue(valueAfter, offset, tab)}\n`);
-        acc.push(`${offset}${tab}-${tab.slice(1)}${key}: ${renderValue(value, offset, tab)}\n`);
+        acc.push(`${offset}${tab}-${tab.slice(1)}${key}: ${renderValue(valueBefore, offset, tab)}\n`);
       }
 
       return acc;
