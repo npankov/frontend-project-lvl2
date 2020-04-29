@@ -10,7 +10,7 @@ const buildAst = (objFirst, objSecond) => {
     if (!_.has(objSecond, key)) {
       return { type: 'removed', key, value: objFirst[key] };
     }
-    
+
     if (_.isObject(objFirst[key]) && _.isObject(objSecond[key])) {
       return { type: 'nested', key, children: buildAst(objFirst[key], objSecond[key]) };
     }
