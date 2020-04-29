@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 const buildAst = (objFirst, objSecond) => {
   const keys = _.union(_.keys(objFirst), _.keys(objSecond));
-
   return keys.map((key) => {
     if (!_.has(objFirst, key)) {
       return { type: 'added', key, value: objSecond[key] };

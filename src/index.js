@@ -1,8 +1,8 @@
+import fs from 'fs';
+import path from 'path';
 import buildAst from './buildAst';
 import parse from './parsers';
 import render from './formatters';
-import fs from 'fs';
-import path from 'path';
 
 const genDiff = (pathToFileFirst, pathToFileSecond, format) => {
   const formatFirstFile = path.extname(pathToFileFirst);
