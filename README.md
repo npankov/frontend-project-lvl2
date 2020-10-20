@@ -5,7 +5,7 @@
 GenDiff utilite for comparing .json, .yml, .ini files.  
 There are three types of possible formats output you can choose to watch the difference: plain, nested, json.
 
-### Installation
+### Install
 
     git clone https://github.com/npankov/frontend-project-lvl2
     npm install
@@ -14,7 +14,7 @@ There are three types of possible formats output you can choose to watch the dif
 
 ---
 
-### Using (comparing .json files)
+### Usage (comparing .json files)
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.json' 'secondfile.json'
@@ -25,7 +25,7 @@ To compare files you should choose output format plain, nested or json
 
 ---
 
-### Using (comparing .yml files)
+### Usage (comparing .yml files)
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.yml' 'secondfile.yml'
@@ -36,7 +36,7 @@ To compare files you should choose output format plain, nested or json
 
 ---
 
-### Using (comparing .ini files)
+### Usage (comparing .ini files)
 To start you type in the terminal  
 
     gendiff --format plain/nested/json 'firstfile.ini' 'secondfile.ini'
