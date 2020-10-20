@@ -11,7 +11,7 @@ const render = (data, format) => {
     case 'json':
       return jsonRender(data);
     default:
-      throw new Error(`Unknown output format: '${format}'!`);
+      throw new Error(`Unknown output format: ${format}!`);
   }
 };
 

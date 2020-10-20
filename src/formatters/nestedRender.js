@@ -32,6 +32,7 @@ const nestedRender = (data) => {
       if (type === 'nested') {
         acc.push(`${offset}${tab}${tab}${key}: {\n${iter(children, (offset + tab + tab), tab)}${offset}${tab}${tab}}\n`);
       }
+
       if (type === 'equal') {
         acc.push(`${offset}${tab}${tab}${key}: ${renderValue(value, offset, tab)}\n`);
       }

@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/npankov/frontend-project-lvl2#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
@@ -48,6 +48,6 @@
     "commander": "^5.0.0",
     "ini": "^1.3.5",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.20"
   }
 }
